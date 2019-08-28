@@ -1,11 +1,12 @@
 {
-  "name": "ds_julieo",
-  "version": "0.0.2",
+  "name": "trunk",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "JoseRosarioOS <joser.rosario@outsystems.com>",
-  "license": "ISC"
+  "keywords": [],
+  "author": "ds-julieo <jose.rosario@outsystems.com>",
+  "license": "MIT"
 }

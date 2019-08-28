@@ -1,5 +1,3 @@
-'use strict';
-
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
-};
+exports.printMsg = function() {
+  console.log("This is a message from the demo package");
+}
