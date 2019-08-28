@@ -1,0 +1,1702 @@
+@import url("https://use.typekit.net/hvw7qkf.css");
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+@import url("/ServiceCenter/OS-Icon-SetNew.css");
+
+/* ===================================================================== */
+/* ===================================================================== */
+
+/*  Design System - Julieo                                               */
+
+/*  $0 - Root - CSS Variables                                            */
+/*  $1 - Resets                                                          */
+/*  $2 - Page Layout                                                     */
+/*  $3 - Elements                                                        */
+/*       $3.1 - Elements - Buttons                                       */
+/*       $3.2 - Elements - Inputs                                        */
+/*       $3.3 - Elements - Checkbox                                      */
+/*       $3.4 - Elements - Radio Button                                  */
+/*  $4 - Components                                                      */
+/*       $4.1 - Components - Feedback Message                            */
+/*       $4.2 - Components - Cards                                       */
+/*       $4.3 - Components - Progress                                    */
+/*       $4.4 - Components - Scrollbar                                   */
+/*       $4.5 - Components - Windows                                     */
+/*       $4.6 - Components - Tabs                                        */
+/*       $4.7 - Components - Table                                       */
+/*       $4.8 - Components - Separator                                   */
+/*       $4.9 - Components -                                             */
+/*       $4.10 - Components - ListItem (Dropdown/Grid)                   */
+/*       $4.10 - Components - Dropdown (Container)                       */
+/*       $4.10 - Components - Feedback Ajax Wait                         */
+/*  $5 - Styles                                                          */
+/*       $5.1 - Styles - Typography                                      */
+/*       $5.2 - Styles - Colors                                          */
+/*       $5.3 - Styles - Grid                                            */
+/*       $5.4 - Styles - Space                                           */
+/*       $5.5 - Styles - Flex                                            */
+/*       $5.6 - Styles - Shadow                                          */
+
+/* ===================================================================== */
+/* ===================================================================== */
+
+
+/* ===================================================================== */
+/*  $0 - Root - CSS Variables                                            */
+/* ===================================================================== */
+:root {
+
+    /* App Settings */
+    --header-size: 56px;
+    --border-radius: 4px;
+    
+    /* Color Brand */
+    --color-brand-light: #dc988a; /* CURRENTLY NOT USED*/
+    --color-brand: #cc2200; 
+    --color-brand-dark: #aa1100; /* CURRENTLY NOT USED*/
+    
+    /* Color Main */
+    --color-neutral-0: #fff;
+    --color-neutral-10: #f7f8F9;
+    --color-neutral-20: #e8eaed;
+    --color-neutral-30: #d2d7dc;
+    --color-neutral-40: #bcc3cb;
+    --color-neutral-50: #949da5;
+    --color-neutral-60: #7b848c;
+    --color-neutral-70: #5a636b;
+    --color-neutral-80: #363f47;
+    --color-neutral-90: #20272f;
+    
+    /* Color Selection */
+    --color-selection-10: #e5F0fe;
+    --color-selection-20: var(--color-info-20);
+    --color-selection-30: #b8d6fc;
+    --color-selection-40: #84b8fa;
+    --color-selection-50: var(--color-info-50);
+    --color-selection-60: #0070e6;
+    --color-selection-70: var(--color-info-70); /* CURRENTLY NOT USED*/
+    --color-selection-80: #004c99;
+    --color-selection-90: #003770; /* CURRENTLY NOT USED*/
+    
+    /* Color Success */
+    --color-success-20: #d7eeb3;
+    --color-success-60: #4ca620;
+    --color-success-70: #009900;
+    
+    /* Color Warning */
+    --color-warning-20: #ffefbb;
+    --color-warning-60: #ff9900;
+    --color-warning-70: #d98200;
+    
+    /* Color Error */
+    --color-error-20: #faccc8;
+    --color-error-50: #ff0000;
+    --color-error-60: #d91100;
+    --color-error-70: #b00900;
+    
+    /* Color Info */
+    --color-info-20: #cce5ff;
+    --color-info-50: #3399ff;
+    --color-info-70: #005ec2;
+    
+    /* Typography */
+    --font-size-display: 36px;
+
+    --font-size-h1: 32px;
+    --font-size-h2: 26px;
+    --font-size-h3: 22px;
+    --font-size-h4: 20px;
+    --font-size-h5: 18px;    
+    --font-size-h6: 16px;
+
+    --font-size-body: 14px;
+    --font-size-body-small: 12px;
+    
+    --font-size-tiny-text: 9px; 
+    
+    /* Space */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-s: 16px;
+    --space-m: 24px;
+    --space-l: 32px;
+    --space-xl: 40px;
+    --space-xxl: 48px;
+    
+    /* Shadow */
+    --shadow-10: 0px 1px 5px rgba(32, 39, 47, 0.2);
+    --shadow-20: 0px 1px 10px rgba(32, 39, 47, 0.2);
+    --shadow-30: 0px 1px 20px rgba(32, 39, 47, 0.25);
+}
+
+
+/* ===================================================================== */
+/*  $1 - Resets                                                          */
+/* ===================================================================== */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    font-family: 'noto-sans', sans-serif;
+    overflow-x: hidden;
+    overflow: auto;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--color-neutral-10);
+    color: var(--color-neutral-90);
+    font-size: var(--font-size-body);
+    font-weight: 400;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+input, 
+textarea, 
+select, 
+button { 
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+:focus {
+    outline: none;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+/* ===================================================================== */
+/*  $2 - Page Layout                                                     */
+/* ===================================================================== */
+.ds-preview-layout {
+    height: 100%;
+    padding-bottom: 40px;
+    padding-top: calc(var(--header-size) + 40px);
+}
+
+.ds-preview-header {
+    background-color: #fff;
+    box-shadow: 0 1px 5px 0 rgba(21, 24, 26, .1);
+    height: var(--header-size);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.ds-preview-header-content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 0 40px;
+}
+
+.ds-preview-main {
+    margin: 0 auto;
+    max-width: 1480px;
+    padding: 0 40px;
+}
+
+.ds-preview-heading {
+    color: #CC2200;
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 24px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.ds-preview-heading:before {
+    background-color: #CC2200;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 3px;
+}
+
+.ds-preview-title {
+    border-bottom: 1px solid #cfcfcf;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.ds-preview-columns {
+    display: flex;
+    margin: 0 -48px;
+}
+
+.ds-preview-columns-item {
+    flex: 1;
+    padding: 0 48px;
+}
+
+.ds-preview-columns-item-fixed {
+    flex: none;
+}
+
+.ds-preview-color {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 150px;
+}
+
+.ds-preview-color-background {
+    height: 115px;
+    width: 100%;
+}
+
+.ds-preview-color-value {
+    background-color: #fff;
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.ds-preview-icon-button {
+    background-color: currentColor;
+    height: 10px;
+    width: 10px;
+}
+
+.ds-preview-icon-feedback-message {
+    width: 16px;
+    height: 16px;
+}
+
+.ds-preview-icon-card {
+    width: 14px;
+    height: 14px;
+    background-color: #7B848C;
+}
+
+.ds-preview-image-card {
+    background-color: #7B848C;
+    width: 90px;
+    height: 90px;
+}
+
+.ds-preview-overflow {
+    overflow: auto;
+}
+
+.ds-preview-icon-tabs {
+    width: 16px;
+    height: 16px;
+    background-color: #BCC3CB;
+}
+
+.ds-preview-icon-list-item {
+    width: 14px;
+    height: 14px;
+    background-color: #7B848C;
+}
+
+.sc-header {
+    padding: 0 var(--space-xl);
+    background-color: var(--color-neutral-90);
+    height: 56px; /* TODO: Create header-size variable */
+    display: flex;
+    align-items: stretch;
+}
+
+.sc-header-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.sc-header-menu {
+    flex: 1;
+    display: inline-flex;
+    margin: 0 var(--space-xl);
+}
+
+.sc-header-menu .sc-header-menu-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-neutral-40);
+    font-size: var(--font-size-body-small);
+}
+
+.sc-header-menu .sc-header-menu-link:not(:first-child) {
+    margin-left: var(--space-m);
+}
+
+.sc-header-menu .sc-header-menu-link:hover {
+    color: var(--color-neutral-0);    
+}
+
+.sc-header-menu .sc-header-menu-link-active {
+    color: var(--color-neutral-0);
+    font-weight: 600;
+}
+
+.sc-header-actions {
+    display: inline-flex;
+    align-items: center;
+}
+
+.sc-header-actions-feedback {
+    color: var(--color-neutral-50);
+    font-size: var(--font-size-h3);
+}
+
+.sc-header-actions-username {
+    color: var(--color-neutral-30);
+    font-size: var(--font-size-body-small);
+}
+
+.sc-header-actions-logout {
+    color: var(--color-selection-40);
+    font-size: var(--font-size-body-small);
+}
+
+.sc-header-actions-feedback:hover, 
+.sc-header-actions-username:hover {
+    color: var(--color-neutral-0);
+}
+
+.sc-header-actions-logout:hover {
+    color: var(--color-selection-60); /* TODO: Review hover style */
+}
+
+.sc-sub-header {
+    background-color: var(--color-neutral-80);
+    height: 40px;
+    display: flex;
+    align-items: stretch;
+    padding: 0 var(--space-xl);
+}
+
+.sc-sub-header .sc-sub-header-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-neutral-40);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    font-size: var(--font-size-body-small);    
+}
+
+.sc-sub-header .sc-sub-header-link:not(:first-child) {
+    margin-left: var(--space-s);
+}
+
+.sc-sub-header .sc-sub-header-link:hover {
+    color: var(--color-neutral-0);    
+}
+
+.sc-sub-header .sc-sub-header-link-active {
+    border-bottom: 2px solid var(--color-brand);
+    font-weight: 600;
+    color: var(--color-neutral-0);
+}
+
+.sc-content {
+    display: flex;
+}
+
+.sc-content-main {
+    flex: 1;
+    border-right: 1px solid var(--color-neutral-30);
+}
+
+.sc-content-main-top {
+    background-color: var(--color-neutral-0);
+    border-bottom: 1px solid var(--color-neutral-20);
+    padding: var(--space-xl);
+}
+
+.sc-content-main-bottom {
+    padding: 0 var(--space-xl);
+}
+
+.sc-content-left {
+    width: 280px;
+    padding: var(--space-xl);
+}
+
+
+
+/* ===================================================================== */
+/*  $3 - Elements                                                        */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  $3.1 - Elements - Buttons                                            */
+/* ===================================================================== */
+.btn {
+    align-items: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 1px 2px rgba(169, 177, 184, 0.2);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 600;
+    height: 32px;
+    justify-content: center;
+    min-width: 70px;
+    padding: 0 16px;
+    border: 1px solid #BCC3CB;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #F7F8F9 100%);
+    color: var(--color-main-8); 
+}
+
+.btn:hover {
+    background-image: linear-gradient(180deg, #F6F6F7 0%, #EEF0F1 100%);    
+    border: 1px solid #B6BDC5;
+}
+
+.btn:active {
+    box-shadow: none;
+    background-image: linear-gradient(180deg, #EDEEEE 0%, #E6E7E9 100%); 
+    border: 1px solid #B0B7BF;   
+}
+
+.btn[disabled] {
+    color: #949DA5;    
+    border: 1px solid #D2D7DC;
+    box-shadow: none;
+    pointer-events: none;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #F7F8F9 100%);
+}
+
+.btn-primary {
+    border: 1px solid #AA1100;
+    background-image: linear-gradient(180deg, #CC2200 0%, #BC1F00 100%);  
+    color: #fff;
+}
+
+.btn-primary:hover {
+    border: 1px solid #991406;    
+    background-image: linear-gradient(180deg, #B62307 0%, #AA2007 100%);
+}
+
+.btn-primary:active {
+    border: 1px solid #8E1509;   
+    background-image: linear-gradient(180deg, #A9230A 0%, #9E210A 100%); 
+}
+
+.btn-primary[disabled] {
+    border: 1px solid #D48880;
+    color: var(--color-neutral-0);
+    background-image: linear-gradient(180deg, #E59080 0%, #DE8F80 100%);    
+}
+
+.btn-small {
+    height: 24px;
+    min-width: auto;
+    padding: 0 8px;
+}
+
+.btn-big {
+    height: 40px;
+    padding: 0 24px; /* TODO: Review padding in big Buttons*/
+}
+
+.btn-icon {
+    height: 24px;
+    min-width: auto;
+    padding: 0;
+    width: 24px;
+}
+
+/* TODO: Review final class for icons inside buttons */
+/* TODO: Review icon margin inside button when is not small */
+.btn .ds-preview-icon-button {
+    margin-right: 4px;
+}
+
+.btn-icon .ds-preview-icon-button {
+    margin-right: 0px;
+}
+
+
+/* ===================================================================== */
+/*  $3.2 - Elements - Inputs                                             */
+/* ===================================================================== */
+/* TODO: Review final class for labels */
+label {
+    color: var(--color-neutral-70);
+    display: block;
+    font-size: var(--font-size-body-small);
+    margin-bottom: 4px;
+}
+
+.input {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-neutral-30);
+    color: var(--color-neutral-90);
+    font-size: var(--font-size-body-small);
+    height: 32px;
+    padding: 0 8px;
+}
+
+.input:hover {
+    border: 1px solid var(--color-neutral-40);  
+}
+
+.input:focus {
+    border: 1px solid var(--color-selection-50); 
+}
+
+.input-small {
+    height: 24px;
+    padding: 0 4px;
+}
+
+.textarea {
+    height: auto;
+    resize: none;
+    padding: 8px;
+}
+
+.link {
+    color: var(--color-selection-60);
+}
+
+.link:hover {
+    color: var(--color-selection-90);
+}
+
+/* TODO: Review read-only option */
+.input[readonly] {
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-70);
+}
+
+.input[disabled] {
+    background-color: var(--color-neutral-20);    
+    color: var(--color-neutral-50);
+    pointer-events: none;
+}
+
+/* TODO: Review not valid behaviors (hover/focus) */
+.input-not-valid,
+.input-not-valid:hover,
+.input-not-valid:focus {
+    border: 1px solid var(--color-error-60);
+}
+
+.input-not-valid-message {
+    color: var(--color-error-60);
+    font-size: var(--font-size-body-small);
+    margin-top: 4px;
+}
+
+/* TODO: Placeholder color is missing */
+
+/* ===================================================================== */
+/*  $3.3 - Elements - Checkbox                                           */
+/* ===================================================================== */
+.checkbox {
+    margin: 0;
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-neutral-30);
+    border-radius: var(--border-radius);
+    position: absolute;
+    box-sizing: border-box;
+    background-color: var(--color-neutral-0);
+}
+
+.checkbox:checked:before {
+    background-color: var(--color-selection-60);  
+    border: 1px solid var(--color-selection-60);  
+}
+
+.checkbox:disabled:before {
+    background-color: var(--color-neutral-10);
+}
+
+.checkbox:checked:disabled:before {
+    background-color: var(--color-neutral-30);
+    border: 1px solid var(--color-neutral-30);
+}
+
+.checkbox:after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 7px;
+    height: 5px;
+    border: 2px solid var(--color-neutral-10);
+    border-top: 0;
+    border-right: 0;
+    top: 4px;
+    left: 3px;
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.checkbox:checked:after {
+    opacity: 1;
+}
+
+/* ===================================================================== */
+/*  $3.4 - Elements - Radio Button                                       */
+/* ===================================================================== */
+.radio-button {
+    margin: 0;
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-button:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-neutral-30);
+    border-radius: 100%; /* TODO: Review border radius variable for circle */
+    position: absolute;
+    box-sizing: border-box;
+    background-color: var(--color-neutral-0);
+}
+
+.radio-button:checked:before {
+    background-color: var(--color-selection-60);
+    border: 1px solid var(--color-selection-60);
+}
+
+.radio-button:checked:disabled:before {
+    background-color: var(--color-neutral-30);
+    border: 1px solid var(--color-neutral-30);
+}
+
+.radio-button:after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    opacity: 0;
+    background-color: var(--color-neutral-0);
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.radio-button:checked:after {
+    opacity: 1;
+}
+
+.radio-button:checked:disabled:after {
+    background-color: var(--color-neutral-10);
+}
+
+/* ===================================================================== */
+/*  $4 - Components                                                      */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  $4.1 - Components - Feedback Message                                 */
+/* ===================================================================== */
+.feedback-message {
+    padding: 16px;
+    font-size: var(--font-size-body-small);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.feedback-message-error {
+    background-color: var(--color-error-20);
+    border: 1px solid var(--color-error-50);
+}
+
+.feedback-message-info {
+    background-color: var(--color-info-20);
+    border: 1px solid var(--color-info-50);
+}
+
+.feedback-message-success {
+    background-color: var(--color-success-20);
+    border: 1px solid var(--color-success-60);
+}
+
+.feedback-message-warning {
+    background-color: var(--color-warning-20);
+    border: 1px solid var(--color-warning-60);
+}
+
+.feedback-message-icon {
+    margin-right: 16px;
+    max-width: 120px; /* TODO: Review with images */
+}
+
+.feedback-message-error .feedback-message-icon {
+    background-color: var(--color-error-60);
+    color: var(--color-error-60);
+}
+
+.feedback-message-info .feedback-message-icon {
+    background-color: var(--color-info-70);
+    color: var(--color-info-70);
+}
+
+.feedback-message-success .feedback-message-icon {
+    background-color: var(--color-success-70);
+    color: var(--color-success-70);
+}
+
+.feedback-message-warning .feedback-message-icon {
+    background-color: var(--color-warning-60);
+    color: var(--color-warning-60);
+}
+
+/* TODO: Review close styles */
+.feedback-message-close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-neutral-50);
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.feedback-message-inline {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.feedback-message-inline.feedback-message-error {
+    color: var(--color-error-60);    
+}
+
+.feedback-message-inline.feedback-message-info {
+    color: var(--color-info-50);
+}
+
+.feedback-message-inline.feedback-message-success {
+    color: var(--color-success-70);   
+}
+
+.feedback-message-inline.feedback-message-warning {
+    color: var(--color-warning-60);   
+}
+
+.feedback-message-inline .feedback-message-icon {
+    margin-right: 8px;
+}
+
+/* ===================================================================== */
+/*  $4.2 - Components - Cards                                            */
+/* ===================================================================== */
+.card {
+    background-color: var(--color-neutral-0);
+    padding: 16px;
+    display: flex;
+    border: 1px solid var(--color-neutral-30);
+    outline-offset: -2px;
+     flex-direction: column;
+    text-align: center;
+}
+
+.card:hover {
+    outline: 2px solid var(--color-selection-30);
+}
+
+.card-selected,
+.card-selected:hover {
+    outline: 2px solid var(--color-selection-50);   
+}
+
+.card-title {
+    font-size: var(--font-size-h6);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: var(--font-size-body-small);
+}
+
+.card-simple {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-image-left {
+    flex-direction: row;
+    text-align: left;
+}
+
+.card-image-left .card-image {
+    margin-right: 16px;
+}
+
+.card-thumbnail {
+    padding: 0;
+}
+
+.card-image-top .card-image {
+    margin-bottom: 16px;
+}
+
+.card-thumbnail .card-content {
+    padding: 8px;    
+}
+
+/* TODO: Review final class for icons and images inside cards */
+.ds-preview-icon-card {
+    margin-right: 8px;
+}
+
+.card-image-top .ds-preview-image-card,
+.card-thumbnail .ds-preview-image-card {
+    width: 100%;
+    height: 140px;
+}
+
+
+/* ===================================================================== */
+/*  $4.3 - Components - Progress                                         */
+/* ===================================================================== */
+.progress-bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-neutral-30);
+    position: relative;
+}
+
+.progress-bar-value { 
+    background-color: var(--color-brand);
+    width: 70%; /* TODO: Width is setted by preview purpose */
+    height: 2px;
+}
+
+
+/* ===================================================================== */
+/*  $4.4 - Components - Scrollbar                                        */
+/* ===================================================================== */
+.scrollable-area {
+    overflow-y: auto;
+}
+
+.scrollable-area::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+ 
+.scrollable-area::-webkit-scrollbar-track {
+    background-color: var(--color-neutral-10);
+}
+ 
+.scrollable-area::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-40);
+    border-radius: 6px;
+}
+
+.scrollable-area::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-neutral-50);
+}
+
+
+/* ===================================================================== */
+/*  $4.5 - Components - Windows                                          */
+/* ===================================================================== */
+.window {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-neutral-40);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    height: 40px;
+    background-color: var(--color-neutral-10);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    justify-content: space-between;
+    padding-left: 16px;
+}
+
+.window-header-title {
+    font-size: var(--font-size-body-small);
+    font-weight: 600;
+    color: var(--color-neutral-60);
+}
+
+.window-header-icons {
+    display: flex;
+}
+
+.window-content {
+    flex: 1;
+    font-size: var(--font-size-body-small);
+    padding: 16px;
+}
+
+.window-footer {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.window-scrollable .window-footer  {
+    border-top: 1px solid var(--color-neutral-30);    
+}
+
+.window-wizard .window-footer {
+    justify-content: space-between;
+}
+
+/* TODO: Review icons in window header */
+/* TODO: Review icons interaction (hover) */
+.ds-preview-icon-window {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.window-header-icons .ds-preview-icon-window > div {
+    width: 16px;
+    height: 16px;
+    background-color: #949DA5;
+}
+
+/* TODO: Missing What's New Window */
+/* TODO: Missing overlay styles */
+
+
+/* ===================================================================== */
+/*  $4.6 - Components - Tabs                                             */
+/* ===================================================================== */
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-header {
+    display: flex;
+}
+
+.tabs-box .tabs-header {
+    background-color: var(--color-neutral-20);    
+}
+
+.tabs-header-item {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-body-small);
+    padding: 0 16px;
+    height: 32px;
+    cursor: pointer;
+    color: var(--color-neutral-70);
+}
+
+.tabs-header-item-active {
+    color: var(--color-neutral-90);
+    position: relative;
+    z-index: 2;
+}
+
+.tabs-box .tabs-header-item {
+    border: 1px solid transparent;
+    border-bottom: 1px solid transparent;    
+}
+
+.tabs-inline .tabs-header-item {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+
+.tabs-box .tabs-header-item-active {
+    background-color: var(--color-neutral-10);
+    border: 1px solid var(--color-neutral-30); 
+    border-bottom: 1px solid transparent;     
+}
+
+.tabs-inline .tabs-header-item-active {
+    border-bottom: 2px solid var(--color-selection-50);
+}
+
+/* TODO: Review hover interaction for IDE */
+.tabs-header-item:not(.tabs-header-item-active):hover {
+    background-color: var(--color-selection-10);
+    color: var(--color-neutral-90);    
+} 
+
+.tabs-box .tabs-content {
+    background-color: var(--color-neutral-10); 
+}
+
+.tabs-content {
+    border-top: 1px solid var(--color-neutral-30); 
+    margin-top: -1px;
+}
+
+.tabs-content-item {
+    padding: var(--space-l) 0 ;
+}
+
+.tabs-content-item:not(.tabs-content-item-active) {
+    display: none;
+}
+
+.tabs-big .tabs-header-item {
+    height: 48px;
+    font-size: var(--font-size-body);
+}
+
+/* TODO: Review final class for icons inside tabs */
+.tabs-header-item .ds-preview-icon-tabs {
+    margin-right: 4px;
+}
+
+.tabs-big .tabs-header-item .ds-preview-icon-tabs {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+/* ===================================================================== */
+/*  $4.7 - Components - Table                                            */
+/* ===================================================================== */
+.table {
+    width: 100%;
+    border-radius: var(--border-radius);
+    border-spacing: 0;
+    background-color: #fff;
+    empty-cells: show;
+    border: 1px solid var(--color-neutral-30);
+}
+
+.table-header {
+    border-bottom: 1px solid var(--color-neutral-30);
+    color: var(--color-neutral-70);
+    font-weight: 600;
+    height: 32px;
+    padding: 0 var(--space-s);
+    text-align: left;
+    font-size: var(--font-size-body-small);
+}
+
+.table-row {
+    background: var(--color-neutral-0); 
+    border-bottom: 1px solid var(--color-neutral-30);
+    height: 48px;
+    padding: var(--space-xs) var(--space-s); 
+    color: var(--color-neutral-90);   
+    font-size: var(--font-size-body-small);
+}
+
+.table tbody tr:last-child .table-row {
+    border-bottom: none;
+}
+
+
+/* ===================================================================== */
+/*  $4.8 - Components - Separator                                        */
+/* ===================================================================== */
+.separator {
+    height: 1px;
+    background-color: var(--color-neutral-30);
+    margin: var(--space-m) 0;
+}
+
+
+/* ===================================================================== */
+/*  $4.9 - Components - Search                                           */
+/* ===================================================================== */
+.search {
+    position: relative;
+}
+
+.search .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+}
+
+.search .input {
+    padding-left: var(--space-l);    
+}
+
+.sc-header-actions .search .input {
+    border-radius: 100px;
+    border: 1px solid var(--color-neutral-80);
+    background-color: var(--color-neutral-80);
+    color: var(--color-neutral-0);
+}
+
+/* TODO: Missing styles for placeholder color */
+
+
+/* ===================================================================== */
+/*  $4.9 - Components - ListItem                                         */
+/* ===================================================================== */
+.list-item {
+    height: 24px;
+    font-size: var(--font-size-body-small);
+    padding-left: 2px;
+    background-color: var(--color-neutral-0);
+    display: flex;
+    align-items: center;
+}
+
+.list-item-with-icon {
+    padding-left: 20px;
+}
+
+/* TODO: Review if list item is always with hover by default */
+.list-item-hover,
+.list-item:not(.list-item-selected):hover {
+    background-color: var(--color-selection-30);
+}
+
+.list-item-selected {
+    background-color: var(--color-selection-50);
+    color: var(--color-neutral-0);
+}
+
+.list-item-disabled {
+    color: var(--color-neutral-40);
+    pointer-events: none;
+}
+
+.list-item-icon {
+    margin-right: var(--space-xxs);
+}
+
+/* ===================================================================== */
+/*  $4.10 - Components - Dropdown                                        */
+/* ===================================================================== */
+.dropdown-container {
+    border: 1px solid var(--color-neutral-30);
+    box-shadow: var(--shadow-20);
+}
+
+/* ===================================================================== */
+/*  $4.10 - Components - Feecback Ajax Wait                              */
+/* ===================================================================== */
+.show-ajax {
+    display: block !important;
+}
+
+div.Feedback_AjaxWait {
+    background-color: var(--color-neutral-20);
+    border-radius: 0;
+    display: block;
+    font-size: 0;
+    height: 4px;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+div.Feedback_AjaxWait:before {
+    -webkit-animation: ajax-wait 1700ms linear infinite;
+            animation: ajax-wait 1700ms linear infinite;
+    background-color: var(--color-brand);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    will-change: transform;
+}
+
+@-webkit-keyframes ajax-wait {
+    0% {
+        -webkit-transform: translateX(-105vw) translateZ(0) scaleX(1);
+    }
+    25% {
+        -webkit-transform: translateX(-55vw) translateZ(0) scaleX(1.5);
+    }
+    50% {
+        -webkit-transform: translateX(0) translateZ(0) scaleX(1.5);
+    }
+    75% {
+        -webkit-transform: translateX(55vw) translateZ(0) scaleX(.5);
+    }
+    100% {
+        -webkit-transform: translateX(105vw) translateZ(0) scaleX(.2);
+    }
+}
+
+@keyframes ajax-wait {
+    0% {
+        transform: translateX(-105vw) translateZ(0) scaleX(1);
+    }
+    25% {
+        transform: translateX(-55vw) translateZ(0) scaleX(1.5);
+    }
+    50% {
+        transform: translateX(0) translateZ(0) scaleX(1.5);
+    }
+    75% {
+        transform: translateX(55vw) translateZ(0) scaleX(.5);
+    }
+    100% {
+        transform: translateX(105vw) translateZ(0) scaleX(.2);
+    }
+}
+
+div.Feedback_AjaxWait img {
+    display: none;
+}
+
+/* ===================================================================== */
+/*  $5 - Styles                                                          */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  $5.1 - Styles - Typography                                           */
+/* ===================================================================== */
+
+/* TODO: Review line-heights for Headings and Body */
+.font-display {
+    font-size: var(--font-size-display);
+    font-weight: 600;
+}
+
+.font-heading-1 {
+    font-size: var(--font-size-h1);
+    font-weight: 600;
+}
+
+.font-heading-2 {
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+}
+
+.font-heading-3 {
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+}
+
+.font-heading-4 {
+    font-size: var(--font-size-h4);
+    font-weight: 600;
+}
+
+.font-heading-5 {
+    font-size: var(--font-size-h5);
+    font-weight: 600;
+}
+
+.font-heading-6 {
+    font-size: var(--font-size-h6);
+    font-weight: 600;
+}
+
+.font-body {
+    font-size: var(--font-size-body);
+}
+
+.font-body-small {
+    font-size: var(--font-size-body-small);
+}
+
+.font-tiny-text {
+    font-size: var(--font-size-tiny-text);
+}
+
+.source-code-text {
+    font-family: 'Source Code Pro', monospace;
+    font-size: var(--font-size-body-small);   
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-semi-bold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+
+/* ===================================================================== */
+/*  $5.2 - Styles - Colors                                               */
+/* ===================================================================== */
+
+/* Color Brand */
+.background-brand-light { background-color: var(--color-brand-light); }
+.background-brand { background-color: var(--color-brand); }
+.background-brand-dark { background-color: var(--color-brand-dark); }
+
+.text-brand-light { color: var(--color-brand-light); }
+.text-brand { color: var(--color-brand); }
+.text-brand-dark { color: var(--color-brand-dark); }
+
+
+/* Color Main */
+.background-neutral-0 { background-color: var(--color-neutral-0); }
+.background-neutral-10 { background-color: var(--color-neutral-10); }
+.background-neutral-20 { background-color: var(--color-neutral-20); }
+.background-neutral-30 { background-color: var(--color-neutral-30); }
+.background-neutral-40 { background-color: var(--color-neutral-40); }
+.background-neutral-50 { background-color: var(--color-neutral-50); }
+.background-neutral-60 { background-color: var(--color-neutral-60); }
+.background-neutral-70 { background-color: var(--color-neutral-70); }
+.background-neutral-80 { background-color: var(--color-neutral-80); }
+.background-neutral-90 { background-color: var(--color-neutral-90); }
+
+.text-neutral-0 { color: var(--color-neutral-0); }
+.text-neutral-10 { color: var(--color-neutral-10); }
+.text-neutral-20 { color: var(--color-neutral-20); }
+.text-neutral-30 { color: var(--color-neutral-30); }
+.text-neutral-40 { color: var(--color-neutral-40); }
+.text-neutral-50 { color: var(--color-neutral-50); }
+.text-neutral-60 { color: var(--color-neutral-60); }
+.text-neutral-70 { color: var(--color-neutral-70); }
+.text-neutral-80 { color: var(--color-neutral-80); }
+.text-neutral-90 { color: var(--color-neutral-90); }
+
+/* Color Selection */
+.background-selection-10 { background-color: var(--color-selection-10); }
+.background-selection-20 { background-color: var(--color-selection-20); }
+.background-selection-30 { background-color: var(--color-selection-30); }
+.background-selection-40 { background-color: var(--color-selection-40); }
+.background-selection-50 { background-color: var(--color-selection-50); }
+.background-selection-60 { background-color: var(--color-selection-60); }
+.background-selection-70 { background-color: var(--color-selection-70); }
+.background-selection-80 { background-color: var(--color-selection-80); }
+.background-selection-90 { background-color: var(--color-selection-90); }
+
+.text-selection-10 { color: var(--color-selection-10); }
+.text-selection-20 { color: var(--color-selection-20); }
+.text-selection-30 { color: var(--color-selection-30); }
+.text-selection-40 { color: var(--color-selection-40); }
+.text-selection-50 { color: var(--color-selection-50); }
+.text-selection-60 { color: var(--color-selection-60); }
+.text-selection-70 { color: var(--color-selection-70); }
+.text-selection-80 { color: var(--color-selection-80); }
+.text-selection-90 { color: var(--color-selection-90); }
+
+/* Color Success */
+.background-success-20 { background-color: var(--color-success-20); }
+.background-success-60 { background-color: var(--color-success-60); }
+.background-success-70 { background-color: var(--color-success-70); }
+
+.text-success-20 { color: var(--color-success-20); }
+.text-success-60 { color: var(--color-success-60); }
+.text-success-70 { color: var(--color-success-70); }
+
+/* Color Warning */
+.background-warning-20 { background-color: var(--color-warning-20); }
+.background-warning-60 { background-color: var(--color-warning-60); }
+.background-warning-70 { background-color: var(--color-warning-70); }
+
+.text-warning-20 { color: var(--color-warning-20); }
+.text-warning-60 { color: var(--color-warning-60); }
+.text-warning-70 { color: var(--color-warning-70); }
+
+/* Color Error */
+.background-error-20 { background-color: var(--color-error-20); }
+.background-error-50 { background-color: var(--color-error-50); }
+.background-error-60 { background-color: var(--color-error-60); }
+.background-error-70 { background-color: var(--color-error-70); }
+
+.text-error-20 { color: var(--color-error-20); }
+.text-error-50 { color: var(--color-error-50); }
+.text-error-60 { color: var(--color-error-60); }
+.text-error-70 { color: var(--color-error-70); }
+
+/* Color Info */
+.background-info-20 { background-color: var(--color-info-20); }
+.background-info-50 { background-color: var(--color-info-50); }
+.background-info-70 { background-color: var(--color-info-70); }
+
+.text-info-20 { color: var(--color-info-20); }
+.text-info-50 { color: var(--color-info-50); }
+.text-info-70 { color: var(--color-info-70); }
+
+
+
+/* ===================================================================== */
+/*  $5.3 - Styles - Grid                                                 */
+/* ===================================================================== */
+.columns {
+    display: flex;
+}
+
+.columns-item {
+    flex: 1;
+}
+
+.columns.gutter-s {
+    margin-left: calc(-1 * var(--space-s) / 2);
+    margin-right: calc(-1 * var(--space-s) / 2);
+}
+
+.columns.gutter-s .columns-item {
+    padding: 0 calc(var(--space-s) / 2);
+}
+
+/* ===================================================================== */
+/*  $5.4 - Styles - Space                                                */
+/* ===================================================================== */
+.margin-xxs { margin: var(--space-xxs); }
+.margin-xs { margin: var(--space-xs); }
+.margin-s { margin: var(--space-s); }
+.margin-m { margin: var(--space-m); }
+.margin-l { margin: var(--space-l); }
+.margin-xl { margin: var(--space-xl); }
+.margin-xxl { margin: var(--space-xxl); }
+
+.margin-top-xxs { margin-top: var(--space-xxs); }
+.margin-top-xs { margin-top: var(--space-xs); }
+.margin-top-s { margin-top: var(--space-s); }
+.margin-top-m { margin-top: var(--space-m); }
+.margin-top-l { margin-top: var(--space-l); }
+.margin-top-xl { margin-top: var(--space-xl); }
+.margin-top-xxl { margin-top: var(--space-xxl); }
+
+.margin-right-xxs { margin-right: var(--space-xxs); }
+.margin-right-xs { margin-right: var(--space-xs); }
+.margin-right-s { margin-right: var(--space-s); }
+.margin-right-m { margin-right: var(--space-m); }
+.margin-right-l { margin-right: var(--space-l); }
+.margin-right-xl { margin-right: var(--space-xl); }
+.margin-right-xxl { margin-right: var(--space-xxl); }
+
+.margin-bottom-xxs { margin-bottom: var(--space-xxs); }
+.margin-bottom-xs { margin-bottom: var(--space-xs); }
+.margin-bottom-s { margin-bottom: var(--space-s); }
+.margin-bottom-m { margin-bottom: var(--space-m); }
+.margin-bottom-l { margin-bottom: var(--space-l); }
+.margin-bottom-xl { margin-bottom: var(--space-xl); }
+.margin-bottom-xxl { margin-bottom: var(--space-xxl); }
+
+.margin-left-xxs { margin-left: var(--space-xxs); }
+.margin-left-xs { margin-left: var(--space-xs); }
+.margin-left-s { margin-left: var(--space-s); }
+.margin-left-m { margin-left: var(--space-m); }
+.margin-left-l { margin-left: var(--space-l); }
+.margin-left-xl { margin-left: var(--space-xl); }
+.margin-left-xxl { margin-left: var(--space-xxl); }
+
+.margin-y-xxs {
+    margin-top: var(--space-xxs);
+    margin-bottom: var(--space-xxs);
+}
+.margin-y-xs {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+.margin-y-s {
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-s);
+}
+.margin-y-m {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+}
+.margin-y-l {
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-l);
+}
+.margin-y-xl {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+.margin-y-xxl {
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-xxl);
+}
+
+.margin-x-xxs {
+    margin-left: var(--space-xxs);
+    margin-right: var(--space-xxs);
+}
+.margin-x-xs {
+    margin-left: var(--space-xs);
+    margin-right: var(--space-xs);
+}
+.margin-x-s {
+    margin-left: var(--space-s);
+    margin-right: var(--space-s);
+}
+.margin-x-m {
+    margin-left: var(--space-m);
+    margin-right: var(--space-m);
+}
+.margin-x-l {
+    margin-left: var(--space-l);
+    margin-right: var(--space-l);
+}
+.margin-x-xl {
+    margin-left: var(--space-xl);
+    margin-right: var(--space-xl);
+}
+.margin-x-xxl {
+    margin-left: var(--space-xxl);
+    margin-right: var(--space-xxl);
+}
+
+.padding-xxs { padding: var(--space-xxs); }
+.padding-xs { padding: var(--space-xs); }
+.padding-s { padding: var(--space-s); }
+.padding-m { padding: var(--space-m); }
+.padding-l { padding: var(--space-l); }
+.padding-xl { padding: var(--space-xl); }
+.padding-xxl { padding: var(--space-xxl); }
+
+.padding-top-xxs { padding-top: var(--space-xxs); }
+.padding-top-xs { padding-top: var(--space-xs); }
+.padding-top-s { padding-top: var(--space-s); }
+.padding-top-m { padding-top: var(--space-m); }
+.padding-top-l { padding-top: var(--space-l); }
+.padding-top-xl { padding-top: var(--space-xl); }
+.padding-top-xxl { padding-top: var(--space-xxl); }
+
+.padding-right-xxs { padding-right: var(--space-xxs); }
+.padding-right-xs { padding-right: var(--space-xs); }
+.padding-right-s { padding-right: var(--space-s); }
+.padding-right-m { padding-right: var(--space-m); }
+.padding-right-l { padding-right: var(--space-l); }
+.padding-right-xl { padding-right: var(--space-xl); }
+.padding-right-xxl { padding-right: var(--space-xxl); }
+
+.padding-bottom-xxs { padding-bottom: var(--space-xxs); }
+.padding-bottom-xs { padding-bottom: var(--space-xs); }
+.padding-bottom-s { padding-bottom: var(--space-s); }
+.padding-bottom-m { padding-bottom: var(--space-m); }
+.padding-bottom-l { padding-bottom: var(--space-l); }
+.padding-bottom-xl { padding-bottom: var(--space-xl); }
+.padding-bottom-xxl { padding-bottom: var(--space-xxl); }
+
+.padding-left-xxs { padding-left: var(--space-xxs); }
+.padding-left-xs { padding-left: var(--space-xs); }
+.padding-left-s { padding-left: var(--space-s); }
+.padding-left-m { padding-left: var(--space-m); }
+.padding-left-l { padding-left: var(--space-l); }
+.padding-left-xl { padding-left: var(--space-xl); }
+.padding-left-xxl { padding-left: var(--space-xxl); }
+
+.padding-y-xxs {
+    padding-top: var(--space-xxs);
+    padding-bottom: var(--space-xxs);
+}
+.padding-y-xs {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+}
+.padding-y-s {
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-s);
+}
+.padding-y-m {
+    padding-top: var(--space-m);
+    padding-bottom: var(--space-m);
+}
+.padding-y-l {
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
+}
+.padding-y-xl {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+.padding-y-xxl {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
+}
+
+.padding-x-xxs {
+    padding-left: var(--space-xxs);
+    padding-right: var(--space-xxs);
+}
+.padding-x-xs {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+}
+.padding-x-s {
+    padding-left: var(--space-s);
+    padding-right: var(--space-s);
+}
+.padding-x-m {
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
+}
+.padding-x-l {
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+}
+.padding-x-xl {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+}
+.padding-x-xxl {
+    padding-left: var(--space-xxl);
+    padding-right: var(--space-xxl);
+}
+
+
+/* ===================================================================== */
+/*  $5.5 - Styles - Flex                                                 */
+/* ===================================================================== */
+.display-flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+/* ===================================================================== */
+/*  $5.6 - Styles - Shadow                                               */
+/* ===================================================================== */
+.shadow-10 { box-shadow: var(--shadow-10); }
+.shadow-20 { box-shadow: var(--shadow-20); }
+.shadow-30 { box-shadow: var(--shadow-30); }
+
+/* CSS MAU DA MARGARIDA*/
+.displaynone {
+    display: none;   
+    
+}
